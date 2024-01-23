@@ -24,7 +24,7 @@ if exist "Palworld\Engine" (
         if exist "Palworld\steamapps" (
             if exist "Palworld\tier0_s.dll" (
                 echo Palworld is already installed.
-                goto End
+                goto ModifyEngineIni
             )
         )
     )
@@ -46,6 +46,13 @@ call install_server.bat
 REM Create start_server.bat in Palworld folder
 echo @echo off > start_server.bat
 echo ..\steamcmd\steamcmd.exe +login anonymous +force_install_dir "D:\Palworld" +app_update 2394010 validate +quit >> start_server.bat
+
+:ModifyEngineIni
+REM Modify Engine.ini to increase server FPS
+echo Modifying Engine.ini to increase server FPS...
+echo. >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
+echo [/Script/OnlineSubsystemUtils.IpNetDriver] >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
+echo NetServerMaxTickRate=60 >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
 
 :End
 cd ..
