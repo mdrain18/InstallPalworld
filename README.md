@@ -14,7 +14,12 @@ The `install_palworld.bat` script automates the process of installing SteamCMD, 
 
 3. **Server Installation**: If Palworld is not already installed, the script creates an `install_server.bat` file in the Palworld folder. This batch file is then executed to install the Palworld server.
 
-4. **Server Start Script**: The script also creates a `start_server.bat` file for running the Palworld server.
+4. **Server Start Script**: The script also creates a `start_server.bat` file for running the Palworld server. This batch file performs several key functions to manage the Palworld server:
+    - **Set Current Directory**: It sets the current working directory to the location of the batch file.
+    - **Backup Server Configuration**: It checks for "ServerBackups" folder, creates it if not present, and backs up the server configuration.
+    - **Update the Server**: The script updates the Palworld server using SteamCMD.
+    - **Update Server Settings**: It copies new `.ini` files from the "updateSettings" folder to the server's configuration directory.
+    - **Start the Server**: Finally, the script starts the Palworld server with specific command-line arguments for performance and server settings.
 
 ## Manual SteamCMD Installation
 
