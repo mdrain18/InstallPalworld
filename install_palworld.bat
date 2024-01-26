@@ -50,9 +50,9 @@ echo ..\steamcmd\steamcmd.exe +login anonymous +force_install_dir "D:\Palworld" 
 :ModifyEngineIni
 REM Modify Engine.ini to increase server FPS
 echo Modifying Engine.ini to increase server FPS...
-echo. >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
-echo [/Script/OnlineSubsystemUtils.IpNetDriver] >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
-echo NetServerMaxTickRate=60 >> Palworld\Pal\Saved\Config\LinuxServer\Engine.ini
+echo. >> Palworld\Pal\Saved\Config\WindowsServer\Engine.ini
+echo [/Script/OnlineSubsystemUtils.IpNetDriver] >> Palworld\Pal\Saved\Config\WindowsServer\Engine.ini
+echo NetServerMaxTickRate=60 >> Palworld\Pal\Saved\Config\WindowsServer\Engine.ini
 
 :End
 cd ..
